@@ -2,6 +2,7 @@ package com.walter.beancurd;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +15,7 @@ import java.sql.Connection;
 @Component
 public class StartupDb implements CommandLineRunner {
 	@Autowired
+	@Qualifier("db2DataSource")
 	private DataSource dataSource;
 
 	@Override
